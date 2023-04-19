@@ -384,8 +384,8 @@ TH1D *truemultDIS_NC=new TH1D("truemultDIS_NC","truemultDIS_NC",10,0.5,10.5);
 TH1D *truemultCOH_NC=new TH1D("truemultCOH_NC","truemultCOH_NC",10,0.5,10.5);
 TH1D *truemultMEC_NC=new TH1D("truemultMEC_NC","truemultMEC_NC",10,0.5,10.5);
 THStack *hs_NC = new THStack("hs_NC","Interaction Types in Observed Multiplicity Bins");
-TCanvas c3=TCanvas();
-c3.Draw();
+TCanvas c4=TCanvas();
+c4.Draw();
 tevt->Project("truemultQE_NC","_truemultQE","nu_ccnc == 1");
 tevt->Project("truemultRES_NC","_truemultRES","nu_ccnc == 1");
 tevt->Project("truemultDIS_NC","_truemultDIS","nu_ccnc == 1");
@@ -406,14 +406,14 @@ hs_NC->SetTitle(" ");
 hs_NC->GetXaxis()->SetTitle("True Multiplicity NC");
 hs_NC->GetYaxis()->SetTitle("Number of Events");
 hs_NC->GetYaxis()->SetRangeUser(0, 500);
-TLegend *l3 = new TLegend(0.65,0.65,0.95,0.88);
-l3->AddEntry(truemultQE_NC,"QE ","F");  
-l3->AddEntry(truemultRES_NC,"RES ","F");
-l3->AddEntry(truemultDIS_NC,"DIS ","F");
-l3->AddEntry(truemultCOH_NC,"COH ","F");
-l3->AddEntry(truemultMEC_NC,"MEC ","F");
-l3->Draw("SAME");
-c3.Print("mult_mode_NC.png");
+TLegend *l4 = new TLegend(0.65,0.65,0.95,0.88);
+l4->AddEntry(truemultQE_NC,"QE ","F");  
+l4->AddEntry(truemultRES_NC,"RES ","F");
+l4->AddEntry(truemultDIS_NC,"DIS ","F");
+l4->AddEntry(truemultCOH_NC,"COH ","F");
+l4->AddEntry(truemultMEC_NC,"MEC ","F");
+l4->Draw("SAME");
+c4.Print("mult_mode_NC.png");
 
 }
 
