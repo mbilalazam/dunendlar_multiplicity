@@ -47,7 +47,7 @@ gStyle->SetStatFontSize(0.05);
 
 
   
-TFile f("/dune/app/users/mazam/working_area/dunendlar_multiplicity/bilal_work/withcutonRange/TrackMult2x2wTruth.root");
+TFile f("/dune/app/users/mazam/working_area/dunendlar_multiplicity/bilal_work/nocutonRange/TrackMult2x2wTruth.root");
 
 TTree* tevt=(TTree*)f.Get("evtTree");
 TTree* tmcp=(TTree*)f.Get("mcpTree");
