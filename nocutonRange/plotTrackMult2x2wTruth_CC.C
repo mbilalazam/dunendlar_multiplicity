@@ -24,7 +24,7 @@
 #include "TProfile.h"
 #include "TProfile2D.h"
 #include "TH2F.h"
-void plotTrackMult2x2wTruthMuCC()
+void plotTrackMult2x2wTruth_CC()
 {
 
 gROOT->LoadMacro("protoDUNEStyle.C");
@@ -52,6 +52,7 @@ TTree* tmcp=(TTree*)f.Get("mcpTree");
 TTree* tsed=(TTree*)f.Get("sedTree");
 
 
+// // // True Muon Multiplicity for CCMEC (No Cut)
 TH1D *truemultmuCCQE=new TH1D("truemultmuCCQE","truemultmuCCQE",5,0,5);
 TCanvas c1=TCanvas();
 c1.Draw();
@@ -65,14 +66,17 @@ for (int i = 1; i <= truemultmuCCQE->GetNbinsX(); i++) {
 }
 
 truemultmuCCQE->SetTitle(" ");
-truemultmuCCQE->GetXaxis()->SetTitle("True muon multiplicity for CCMEC within acceptance");
-truemultmuCCQE->GetYaxis()->SetTitle("Number of particles");
+truemultmuCCQE->GetXaxis()->SetTitle("True Muon Multiplicity for CCMEC (No Cut)");
+truemultmuCCQE->GetYaxis()->SetTitle("Number of Particles");
 truemultmuCCQE->GetYaxis()->SetTitleOffset(1.2);
 truemultmuCCQE->SetLineColor(kBlue);
 truemultmuCCQE->Draw("HISTE1");
 c1.Print("mult_muCCQE.png");
 
 
+////////// --------------------------------------------------------------- //////////
+
+// // // True Muon Multiplicity for CCRes (No Cut)
 TH1D *truemultmuCCRes=new TH1D("truemultmuCCRes","truemultmuCCRes",5,0,5);
 TCanvas c2=TCanvas();
 c2.Draw();
@@ -86,14 +90,17 @@ for (int i = 1; i <= truemultmuCCRes->GetNbinsX(); i++) {
 }
 
 truemultmuCCRes->SetTitle(" ");
-truemultmuCCRes->GetXaxis()->SetTitle("True muon multiplicity for CCRes within acceptance");
-truemultmuCCRes->GetYaxis()->SetTitle("Number of particles");
+truemultmuCCRes->GetXaxis()->SetTitle("True Muon Multiplicity for CCRes (No Cut)");
+truemultmuCCRes->GetYaxis()->SetTitle("Number of Particles");
 truemultmuCCRes->GetYaxis()->SetTitleOffset(1.2);
 truemultmuCCRes->SetLineColor(kBlue);
 truemultmuCCRes->Draw("HISTE1");
 c2.Print("mult_muCCRes.png");
 
 
+////////// --------------------------------------------------------------- //////////
+
+// // //  True Muon Multiplicity for CCDIS (No Cut)
 TH1D *truemultmuCCDIS=new TH1D("truemultmuCCDIS","truemultmuCCDIS",5,0,5);
 TCanvas c3=TCanvas();
 c3.Draw();
@@ -107,14 +114,17 @@ for (int i = 1; i <= truemultmuCCDIS->GetNbinsX(); i++) {
 }
 
 truemultmuCCDIS->SetTitle(" ");
-truemultmuCCDIS->GetXaxis()->SetTitle("True muon multiplicity for CCDIS within acceptance");
-truemultmuCCDIS->GetYaxis()->SetTitle("Number of particles");
+truemultmuCCDIS->GetXaxis()->SetTitle("True Muon Multiplicity for CCDIS (No Cut)");
+truemultmuCCDIS->GetYaxis()->SetTitle("Number of Particles");
 truemultmuCCDIS->GetYaxis()->SetTitleOffset(1.2);
 truemultmuCCDIS->SetLineColor(kBlue);
 truemultmuCCDIS->Draw("HISTE1");
 c3.Print("mult_muCCDIS.png");
 
 
+////////// --------------------------------------------------------------- //////////
+
+// // // True Muon Multiplicity for CCCOH (No Cut)
 TH1D *truemultmuCCCOH=new TH1D("truemultmuCCCOH","truemultmuCCCOH",5,0,5);
 TCanvas c4=TCanvas();
 c4.Draw();
@@ -128,14 +138,17 @@ for (int i = 1; i <= truemultmuCCCOH->GetNbinsX(); i++) {
 }
 
 truemultmuCCCOH->SetTitle(" ");
-truemultmuCCCOH->GetXaxis()->SetTitle("True muon multiplicity for CCCOH within acceptance");
-truemultmuCCCOH->GetYaxis()->SetTitle("Number of particles");
+truemultmuCCCOH->GetXaxis()->SetTitle("True Muon Multiplicity for CCCOH (No Cut)");
+truemultmuCCCOH->GetYaxis()->SetTitle("Number of Particles");
 truemultmuCCCOH->GetYaxis()->SetTitleOffset(1.2);
 truemultmuCCCOH->SetLineColor(kBlue);
 truemultmuCCCOH->Draw("HISTE1");
 c4.Print("mult_muCCCOH.png");
 
 
+////////// --------------------------------------------------------------- //////////
+
+// // // True Muon Multiplicity for CCMEC (No Cut)
 TH1D *truemultmuCCMEC=new TH1D("truemultmuCCMEC","truemultmuCCMEC",5,0,5);
 TCanvas c5=TCanvas();
 c5.Draw();
@@ -149,20 +162,39 @@ for (int i = 1; i <= truemultmuCCMEC->GetNbinsX(); i++) {
 }
 
 truemultmuCCMEC->SetTitle(" ");
-truemultmuCCMEC->GetXaxis()->SetTitle("True muon multiplicity for CCMEC within acceptance");
-truemultmuCCMEC->GetYaxis()->SetTitle("Number of particles");
+truemultmuCCMEC->GetXaxis()->SetTitle("True Muon Multiplicity for CCMEC (No Cut)");
+truemultmuCCMEC->GetYaxis()->SetTitle("Number of Particles");
 truemultmuCCMEC->GetYaxis()->SetTitleOffset(1.2);
 truemultmuCCMEC->SetLineColor(kBlue);
 truemultmuCCMEC->Draw("HISTE1");
 c5.Print("mult_muCCMEC.png");
 
 
+////////// --------------------------------------------------------------- //////////
 
+// // // True Muon Multiplicity for CC (No Cut)
+TH1D *truemultmuCC=new TH1D("truemultmuCC","truemultmuCC",5,0,5);
+TCanvas c6=TCanvas();
+c6.Draw();
+tevt->Project("truemultmuCC","_truemultmu","nu_ccnc == 0");
+
+// Loop over bins and add number of entries to bin label
+for (int i = 1; i <= truemultmuCC->GetNbinsX(); i++) {
+    int binEntries = truemultmuCC->GetBinContent(i);
+    TString binLabel = Form("%.0f (%d)", truemultmuCC->GetBinLowEdge(i), binEntries);
+    truemultmuCC->GetXaxis()->SetBinLabel(i, binLabel);
+}
+
+truemultmuCC->SetTitle(" ");
+truemultmuCC->GetXaxis()->SetTitle("True Muon Multiplicity for CC (No Cut)");
+truemultmuCC->GetYaxis()->SetTitle("Number of Particles");
+truemultmuCC->GetYaxis()->SetTitleOffset(1.2);
+truemultmuCC->SetLineColor(kBlue);
+truemultmuCC->Draw("HISTE1");
+c6.Print("mult_muCC.png");
 
 
 
 
 
 }
-
-
