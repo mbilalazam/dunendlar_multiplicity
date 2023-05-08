@@ -4,6 +4,7 @@ lar -c prodgenie_nu_dunend2x2.fcl -n 1000 -o out_gen.root
 lar -c dunend2x2_g4.fcl out_gen.root -n 1000 
 lar -c runsimdumpnew_dunend2x2.fcl out_gen_g4.root -n 1000
 
+
 ## Some Lines from the Output of `lar -c dunend2x2_g4.fcl out_gen.root -n 1000'
 TimeReport ---------- Time summary [sec] -------
 TimeReport CPU = 255.483326 Real = 261.253009
