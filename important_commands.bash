@@ -1,8 +1,8 @@
 # Run sample (I like to do this in the parent of dunendlar_tutorial directory)
 
-lar -c prodgenie_nu_dunend2x2.fcl -n 10000 -o out_gen.root
-lar -c dunend2x2_g4.fcl out_gen.root -n 10000 
-lar -c runsimdumpnew_dunend2x2.fcl out_gen_g4.root -n 10000
+lar -c prodgenie_nu_dunend2x2.fcl -n 1000 -o out_gen.root
+lar -c dunend2x2_g4.fcl out_gen.root -n 1000 
+lar -c runsimdumpnew_dunend2x2.fcl out_gen_g4.root -n 1000
 
 # Some plotting commnads
 .L plotTrackMult2x2wTruthMuCC.C
