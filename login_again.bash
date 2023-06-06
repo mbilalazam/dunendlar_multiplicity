@@ -11,7 +11,7 @@ export LC_CTYPE=en_US.UTF-8
 source /grid/fermiapp/products/dune/setup_dune.sh
 
 # Change directory to working area and source the larsoft setup script
-cd /dune/app/users/mazam/working_area/dunendlar_multiplicity/
+cd /dune/app/users/mazam/working_area/dunendlar_multiplicity/bilal_work/inProgress/
 source ./localProducts_larsoft_v09_58_01_e20_prof/setup
 
 # Set up the mrb environment
