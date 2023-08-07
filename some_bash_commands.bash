@@ -101,3 +101,7 @@ git commit -m "Commit message"
 git push
 Username for 'https://github.com': mazam3@hawk.iit.edu
 Password for 'https://mazam3@hawk.iit.edu@github.com': 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
+
+
+# Install a custom python package
+pip install --user h5py
