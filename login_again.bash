@@ -23,5 +23,5 @@ mrb i -j8
 # Set up the mrbslp script for running the code
 mrbslp
 
-cd bilal_work/inProgress/
+cd bilal_work/inProgress/MiniRun4_RHC/understanding_eventVertex_ids
 
